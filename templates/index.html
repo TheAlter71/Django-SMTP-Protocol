@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The form</title>
+</head>
+<body>
+    <form method="POST" action="">
+        {% csrf_token %}
+        Your name : <input type="text" name="name">
+        <br><br>
+        Your Email : <input type="email" name="email">
+        <br> <br>
+        Subject: <input type="text" name="subject">
+        <br> <br>
+        Message : <input type="text" name="message">
+        <br> <br>
+
+        {% if success%}
+        {{success}}
+        {%else%}
+        <input type="submit">
+        {% endif %}
+    </form>
+</body>
+</html>
